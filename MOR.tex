@@ -1,4 +1,4 @@
-\documentclass[10pt,twocolumn,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 
 
 % This article is written, editd, and reviewd by the Activeeon R&D department
@@ -37,16 +37,16 @@
 
 \selectlanguage{english}
 
-{\textbf{Keywords} Edge computing, Cloud computing, MORPHEMIC}
+%{\textbf{Keywords} Edge computing, Cloud computing, MORPHEMIC}
 
 \vskip 2em
-\textbf{Cloud limitations and how the Edge can address them}
+\noindent \textbf{Cloud limitations and how the Edge can address them}
 \vskip .5em
 
 Cloud computing has revolutionized the IT industry by shifting from
 traditional in-house servers toward Cloud-based services. A survey in 2019 has
 shown that 94\% of technical professionals across a broad cross-section of
-organizations use cloud one way or another~\cite{Flexera}. Out of the 786
+organizations use Cloud one way or another~\cite{Flexera}. Out of the 786
 surveyed professionals, 84\% are using a Multi-Cloud strategy. This can be
 attributed to the low cost of obtaining and maintaining the resources and the
 facility of scaling the resources following a surge in traffic.
@@ -69,7 +69,7 @@ requiring the transfer of large data to the Cloud to be processed.
 \end{itemize}
 
 In contrast, Cloud computing is constrained by a relatively high network
-latency that can be estimated as 40 ms for wired connection and 150 ms for a
+latency that can be estimated as 40 ms for a wired connection and 150 ms for a
 4G connection~\cite{claudit}. As a result, latency-sensitive applications like
 VR and gaming will perform poorly on the Cloud~\cite{elbamby2018toward}. In
 addition, the data transfer from the user to the Cloud is limited by the
@@ -86,7 +86,7 @@ Area Network (LAN), and as a result, does not suffer an ISP bandwidth
 limitation~\cite{bonomi2012fog}.
 
 \vskip 2em
-\textbf{MORPHEMIC combines the best of both worlds}
+\noindent \textbf{MORPHEMIC combines the best of both worlds}
 \vskip .5em
 
 The MORPHEMIC project supports the accumulation of computational nodes from
@@ -104,38 +104,38 @@ are deployed components on the Cloud.
 This optimization is the core of the MELODIC Uppperware, a component capable
 of analyzing the application model and deciding what nodes to be provisioned
 based on each application's component requirements. This process is then
-enhanced through monitoring and forecasting features provided in the MORPHEMIC
+enhanced through monitoring and forecasting features provided by the MORPHEMIC
 pre-processor~\cite{d41}, such that the application resources are not only
 decided at the initial implementation but also subject to on-the-fly
 modifications.
 
 
 \vskip 2em
-\textbf{Develop your Edge application and MORPHEMIC will handle the
+\noindent \textbf{Develop your Edge application and MORPHEMIC will handle the
 resource management}
 \vskip .5em
 
-MORPHEMIC uses the state-of-the-art ProActive Scheduler and Resource Manager
-to handle the resources~\cite{d41,d53}. ProActive a product of Activeeon is a
-Java-based cross-platform workflow scheduler and resource manager. ProActive
-acts as a central point that connects MORPHEMIC with all Cloud providers,
-clusters, and on-premises computational nodes.
+MORPHEMIC uses the Scheduler and Resource Manager of ProActive to handle the
+resources~\cite{d41,d53}. ProActive a product of Activeeon is a Java-based
+cross-platform workflow scheduler and resource manager. ProActive acts as a
+central point that connects MORPHEMIC with all Cloud providers, clusters, and
+on-premises computational nodes.
 
 ProActive supports the integration of Edge nodes using two main methods:
 
 \begin{itemize}
 
 \item \textbf{BYON infrastructure: } i.e. Bring your own nodes, which supports
-any private node provided by the developer. This approach works using an SSH
-connection, then ProActive creates and connect an abstract node using a
+any private node provided by the MORPHEMIC user. This approach works using an SSH
+connection, then ProActive creates and connects an abstract node using a
 ProActive node agent. This approach supports any kind of node (bare-metal or
 virtual machine) regardless of the sources of the machine (Cloud, Edge,
 on-premises, cluster, etc.).
 
 \item \textbf{Edge infrastructure: } this approach targets Edge nodes and
 focuses on the stringent resource limitation the Edge nodes are famous for.
-Similar to BYON, it deploys a node using a ProActive node agent, however with
-the focus on lightweight implementation.
+Similar to BYON, it deploys a node by starting a ProActive node agent on it,
+however with the focus on lightweight implementation.
 
 \end{itemize}
 
@@ -147,11 +147,11 @@ with their extreme resource limitations.
 
 
 \vskip 2em
-\textbf{MORPHEMIC adapts resources according to your application needs}
+\noindent \textbf{MORPHEMIC adapts resources according to your application needs}
 \vskip .5em
 
-In conclusion, supporting different resources types is the first building
-blocking of MORPHEMIC. Using this capability MORPHEMIC is able to select the
+In conclusion, supporting different resource types is the first building
+blocking of MORPHEMIC. Using this capability, MORPHEMIC is able to select the
 resources that deliver the best performance to the application's specific
 needs. Equally, MORPHEMIC can leverage this capability to deliver a tailored
 proactive adaptation based on the application's traffic.
