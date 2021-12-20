@@ -1,0 +1,161 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+
+% This article is written, editd, and reviewd by the Activeeon R&D department
+% for the H2020 MORPHEMIC project. The mentioned work is the intellectual
+% property of MORPHEMIC.
+% Corresponding author: Ali J. Fahs
+
+
+% packages
+\usepackage[spanish,english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{
+		\usefont{OT1}{bch}{b}{n}
+		\huge MORPHEMIC: a complete paradigm from Cloud to Edge
+}
+
+\usepackage{authblk}
+
+\author[1]{Ali J. Fahs}
+\author[1]{Maroun Koussaifi}
+\author[1]{Mohamed Khalil Labidi}
+
+
+	\affil{Activeeon, Research \& Development Department}
+
+\begin{document}
+\maketitle
+
+\selectlanguage{english}
+
+{\textbf{Keywords} Edge computing, Cloud computing, MORPHEMIC}
+
+\vskip 2em
+\textbf{Cloud limitations and how the Edge can address them}
+\vskip 2em
+
+Cloud computing has revolutionized the IT industry by shifting from
+traditional in-house servers toward cloud-based services. A survey in 2019 has
+shown that 94\% of technical professionals across a broad cross-section of
+organizations use cloud one way or another~\cite{Flexera}. Out of the 786
+surveyed professionals, 84\% are using a multi-cloud strategy. This can be
+attributed to the low cost of obtaining and maintaining the resources and the
+facility of scaling the resources following a surge in traffic.
+
+However, the upsurge in fields like Artificial Intelligence (AI), Virtual
+Reality (VR), stream processing, autonomous vehicles, and most prominently
+Internet of things (IoT) have induced different requirements to those of the
+traditional client-server applications~\cite{ahmed2019fog}. Such requirements
+are constricted in terms of:
+
+\begin{itemize}
+
+\item \textbf{Latency:} for example, VR and gaming can only tolerate
+end-to-end response times (including network and computation delays) of 20 ms.
+
+\item \textbf{Bandwidth:} for example, stream processing and IoT, requiring
+the transfer of large data to the cloud to be processed.
+
+\end{itemize}
+
+In contrast, Cloud computing is constrained by a relatively high network
+latency that can be estimated as 40 ms for wired connection and 150 ms for a
+4G connection~\cite{claudit}. As a result, latency-sensitive applications like
+VR and gaming will perform poorly on the cloud~\cite{elbamby2018toward}. In
+addition, the data transfer from the user to the Cloud is limited by the
+Internet Service Provider (ISP) Bandwidth which contributes to impeding
+data-intensive applications like stream processing and IoT.
+
+Unlike Cloud computing where resources are centralized in a handful of data
+centers, Edge computing aims at distributing resources in the vicinity of the
+end-user~\cite{sill2017standards}. This approach grantees a low
+user-to-resource latency that can be as low as a couple of
+milliseconds~\cite{fahs2020proximity,fahs2020voila}. Simultaneously, the
+end-user is connected to the application resources using a Local Area Network
+(LAN), and as a result, does not suffer an ISP bandwidth
+Limitation~\cite{bonomi2012fog}.
+
+\vskip 2em
+\textbf{MORPHEMIC combines the best of both worlds}
+\vskip 2em
+
+The MORPHEMIC project supports the accumulation of computational nodes from
+versatile resource pools. MORPHEMIC does not only provide a multi-cloud
+solution but also allows application developers to acquire Edge nodes. This
+paradigm combines the best of both worlds; resource-intensive applications can
+profit from a multi-cloud implementation. At the same time, latency-sensitive
+applications can deploy their services on the edge through the same platform.
+This opens the door for multitude of optimization possibilities, for example,
+using MORPHEMIC and application can be deployed in a hybrid fashion where the
+latency- and bandwidth- components of the application are deployed on the
+edge. While the latency-tolerant, data-intensive, or resource-intensive
+components on the cloud.
+
+This optimization is the core of the MELODIC Uppperware, a component capable
+of analyzing the application model and deciding what nodes to be provisioned
+based on each application's component requirements. This process is then
+enhanced through monitoring and forecasting features provided in the MORPHEMIC
+pre-processor~\cite{d41}, such that the application resources are not only
+decided at the initial implementation but also subject to on-the-fly
+modifications.
+
+
+\vskip 2em
+\textbf{Develop your edge application and MORPHEMIC will handle the
+resource management}
+\vskip 2em
+
+MORPHEMIC uses the state-of-the-art ProActive Scheduler and Resource Manager
+to handle the resources~\cite{d41,d53}. ProActive a product of Activeeon is a
+Java-based cross-platform workflow scheduler and resource manager. ProActive
+acts as a central point that connects MORPHEMIC with all cloud providers,
+clusters, and on-premises computational nodes.
+
+ProActive supports the integration of Edge nodes using two main methods:
+
+\begin{itemize}
+
+\item \textbf{BYON infrastructure: } i.e. Bring your own nodes, which supports
+any private node provided by the developer. This approach works using an SSH
+connection, then ProActive creates and connect an abstract node using a
+ProActive node agent. This approach supports any kind of node (bare-metal or
+virtual machine) regardless of the sources of the machine (cloud, edge,
+on-premises, cluster, etc.).
+
+\item \textbf{Edge infrastructure: } this approach targets edge nodes and
+focuses on the stringent resource limitation the edge nodes are famous for.
+Similar to BYON, it deploys a node using a ProActive node agent, however
+focusing on a lightweight implementation.
+
+\end{itemize}
+
+As can be seen from the current state-of-the-art, ARMv7 and more specifically
+Raspberry Pis are commonly used as the main-stream edge nodes. MORPHEMIC and
+ProActive have taken notice of this trend and enhanced their resource
+management to support such devices in terms of supporting ARMv7 and by coping
+with their extreme resource limitations. 
+
+
+\vskip 2em
+\textbf{MORPHEMIC adapts resources according to your application need}
+\vskip 2em
+
+In conclusion, supporting different resources types is the first building
+blocking of MORPHEMIC. Using this capability MORPHEMIC is able to select the
+resources that deliver the best performance to your specific needs. Equally,
+MORPHEMIC can leverage this capability to deliver a tailored proactive
+adaptation based on the application's traffic.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{MOR.bib}
+
+\end{document}
